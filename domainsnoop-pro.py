@@ -23,6 +23,8 @@ from datetime import datetime
 from tqdm import tqdm
 from functools import wraps
 import textwrap
+from urllib3.util import Retry
+from requests.adapters import HTTPAdapter
 
 # Initialize colorama for cross-platform colored output
 init()
@@ -678,7 +680,13 @@ def get_wayback_urls(domain):
     """Get historical URLs from Wayback Machine"""
     try:
         wayback_url = f"https://web.archive.org/cdx/search/cdx?url=*.{domain}&output=json&collapse=urlkey"
-        response = requests.get(wayback_url, timeout=30)
+        
+        # Increased timeout and added retries with backoff
+        session = requests.Session()
+        retries = Retry(total=3, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
+        session.mount('https://', HTTPAdapter(max_retries=retries))
+        
+        response = session.get(wayback_url, timeout=60)
         
         if response.status_code != 200:
             return {"error": "Failed to retrieve Wayback Machine data"}
@@ -748,6 +756,8 @@ def get_wayback_urls(domain):
         }
         
         return categories
+    except requests.Timeout:
+        return {"error": "Wayback Machine request timed out. Try again later."}
     except Exception as e:
         return {"error": f"Error retrieving Wayback URLs: {str(e)}"}
 
