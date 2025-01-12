@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8%2B-blue.svg">
   <img src="https://img.shields.io/badge/License-MIT-green.svg">
-  <img src="https://img.shields.io/badge/Version-2.1-red.svg">
+  <img src="https://img.shields.io/badge/Version-2.2-red.svg">
 </p>
 
 DomainSnoop Pro is a powerful, enterprise-grade domain intelligence tool that provides comprehensive analysis of internet domains. Whether you're a security professional, system administrator, or researcher, DomainSnoop Pro helps you gather detailed insights about domain infrastructure, assess security posture, and identify potential threats.
@@ -190,11 +190,27 @@ Output Options:
 - IP resolution for discovered subdomains
 
 ### Historical Data Analysis
-- Wayback Machine integration
-- Historical URL discovery
-- Content type analysis
-- Status code tracking
+- Wayback Machine integration with:
+  - Comprehensive URL categorization
+  - Status code analysis
+  - MIME type tracking
+  - Temporal analysis
+  - Year-by-year statistics
+  - Advanced error handling and retry mechanism
+- Historical URL discovery with smart filtering
+- Content type analysis and categorization
+- Status code distribution analysis
 - Temporal analysis of domain changes
+
+### Progress Tracking
+- Real-time progress indication with:
+  - Percentage completion
+  - Visual progress bar
+  - Task completion counter
+  - Elapsed time tracking
+  - Estimated time remaining
+- Smart concurrent task tracking
+- Detailed progress for each analysis type
 
 ### Shodan Integration
 ```bash
@@ -209,10 +225,6 @@ python domainsnoop-pro.py example.com --shodan
 The Shodan integration can be used in two ways:
 1. Pass your API key directly using the `--shodan-key` argument
 2. Set the `SHODAN_API_KEY` environment variable
-
-If you're using the `--all` option, you'll need to either:
-- Provide the API key with `--shodan-key`
-- Have the `SHODAN_API_KEY` environment variable set
 
 - Service enumeration
 - Vulnerability detection
