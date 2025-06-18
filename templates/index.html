@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <title>DomainSnoop-Pro Web UI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    .error { color: red; }
+    pre { background: #eee; padding: 1em; border-radius: 5px; }
+    h1 { color: #1e90ff; }
+    form { margin-bottom: 2em; }
+    label { display: block; margin-bottom: 0.5em; }
+    button { font-size: 1em; padding: 0.5em 1em; }
+  </style>
+</head>
+<body>
+  <h1>DomainSnoop-Pro Web UI</h1>
+  <form method="post">
+    <label>Domain: <input name="domain" required></label>
+    <label>Shodan API Key (optional): <input name="shodan_key"></label>
+    <strong>Checks:</strong>
+    {% for key, label in scan_options %}
+      <label><input type="checkbox" name="checks" value="{{ key }}"> {{ label }}</label>
+    {% endfor %}
+    <button type="submit">Run Scan</button>
+  </form>
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+  {% if results %}
+    <h2>Results</h2>
+    <pre>{{ results | tojson(indent=2) }}</pre>
+  {% endif %}
+</body>
+</html>
