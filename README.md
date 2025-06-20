@@ -1,4 +1,4 @@
-# DomainSnoop Pro
+# DomainSnoop-Pro
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8%2B-blue.svg">
@@ -6,139 +6,81 @@
   <img src="https://img.shields.io/badge/Version-2.2-red.svg">
 </p>
 
-DomainSnoop Pro is a powerful, enterprise-grade domain intelligence tool that provides comprehensive analysis of internet domains. Whether you're a security professional, system administrator, or researcher, DomainSnoop Pro helps you gather detailed insights about domain infrastructure, assess security posture, and identify potential threats.
+**DomainSnoop-Pro** is an advanced, enterprise-grade domain intelligence and reconnaissance tool for security professionals, researchers, sysadmins, and anyone needing in-depth information about internet domains. It combines a broad set of reconnaissance, security, and intelligence features in a single, concurrent, and highly extensible platform.
 
-## 🎯 What Can DomainSnoop Pro Do?
+---
 
-### Core Intelligence
-- **DNS Infrastructure**: Complete DNS record analysis (A, AAAA, MX, NS, TXT, SOA, CNAME)
-- **SSL/TLS Assessment**: In-depth certificate analysis and security evaluation
-- **IP Intelligence**: Comprehensive IP information with ASN details
-- **Port Scanning**: Fast and efficient port scanning with service detection
-- **Technology Detection**: Advanced web technology and framework identification
-- **HTTP Headers**: Detailed analysis of HTTP headers and security configurations
-- **Subdomain Enumeration**: Comprehensive subdomain discovery and validation
-- **Historical Analysis**: Wayback Machine integration for URL discovery
-- **Shodan Intelligence**: Advanced host and service information via Shodan API
+## 🚀 What Does DomainSnoop-Pro Do?
 
-### 1. Domain Infrastructure Analysis
-- Map out complete DNS infrastructure (A, AAAA, MX, NS, TXT, SOA, CNAME records)
-- Analyze SSL/TLS certificates and configurations
-- Identify IP addresses and gather ASN information
-- Discover open ports and running services
-- Detect web technologies and frameworks
-- Enumerate subdomains using multiple techniques
-- Analyze HTTP headers and security configurations
-- Historical URL analysis through Wayback Machine
-- Shodan integration for additional intelligence
+DomainSnoop-Pro offers a full suite of domain intelligence and reconnaissance checks, including:
 
-### 2. Security Assessment
-- **WAF Detection**: Identifies and fingerprints 10+ Web Application Firewalls
-- **SSL/TLS Security**: Analyzes protocols, ciphers, and known vulnerabilities
-- **Security Headers**: Comprehensive HTTP security header analysis
-- **DNSSEC**: DNSSEC validation and configuration checks
-- **Email Security**: SPF, DMARC, DKIM, and MTA-STS verification
-- **Typosquatting Detection**: Identifies potential domain squatting attempts
-- Identify and fingerprint Web Application Firewalls (WAFs)
-- Analyze SSL/TLS security configurations
-- Check HTTP security headers
-- Validate DNSSEC implementation
-- Verify email security (SPF, DMARC, DKIM, MTA-STS)
-- Detect potential typosquatting attempts
+### 🔎 Domain & Infrastructure Analysis
 
-### 3. Threat Intelligence
-- **Domain Reputation**: Checks against multiple reputation databases
-- **Certificate Transparency**: Monitors CT logs for suspicious certificates
-- **Security Scoring**: Risk assessment based on security configurations
-- **Infrastructure Analysis**: Port scanning and service identification
-- Check domain reputation against multiple databases
-- Monitor Certificate Transparency logs
-- Generate security risk scores
-- Analyze infrastructure for potential threats
+- **DNS Record Analysis**: Fetches all key DNS records (A, AAAA, MX, NS, TXT, SOA, CNAME)
+- **IP & ASN Intelligence**: Finds IP addresses, ASN, geolocation, organization, and abuse contacts
+- **SSL/TLS Inspection**: Retrieves certificate details, issuer, validity, and alternative names
+- **Port Scanning**: Scans the target for open common ports and services
+- **Technology Detection**: Identifies frameworks, server software, and web technologies
+- **Subdomain Enumeration**: Discovers active subdomains using DNS, heuristics, and CT logs
+- **Wayback Machine Integration**: Recovers historical URLs and snapshots for the domain
 
-### 4. Performance Features
-- **Concurrent Analysis**: High-performance parallel processing with smart rate limiting
-- **Error Handling**: Robust error recovery and reporting
-- **Color-Coded Output**: Clean, colorized, and structured output
-- **Progress Tracking**: Real-time progress indication
-- **Data Export**: JSON export for integration
-- Fast, concurrent analysis with smart rate limiting
-- Color-coded, easy-to-read output
-- Real-time progress tracking
-- JSON export for integration with other tools
-- Extensive subdomain enumeration capabilities
-- Historical data analysis
-- Advanced HTTP header analysis
+### 🛡️ Security & Threat Assessment
 
-## 🔄 Comparison with Similar Tools
+- **SSL/TLS Security Analysis**: Checks for insecure protocols, ciphers, certificate expiry, and vulnerabilities
+- **HTTP Security Headers**: Assesses presence and configuration of all major security headers
+- **Email Security**: Verifies SPF, DKIM, DMARC, and MTA-STS DNS records
+- **DNSSEC Validation**: Checks if the domain uses DNSSEC for integrity protection
+- **WAF Detection**: Identifies common Web Application Firewalls and their vendors
+- **Typosquatting Detection**: Scans for active typo-variant domains to spot phishing risk
+- **Domain Reputation**: Checks if the domain appears on major DNS blacklists
+- **Certificate Transparency Monitoring**: Reviews recent CT log entries for suspicious certificates
+- **Shodan Integration**: Gathers external threat intelligence and vulnerability data via Shodan API
 
-| Feature                    | DomainSnoop Pro | Amass     | DNSRecon | theHarvester |
-|---------------------------|-----------------|-----------|-----------|--------------|
-| **Core Features**         |                |           |           |              |
-| DNS Enumeration           | ✅             | ✅        | ✅        | ✅           |
-| SSL/TLS Analysis          | ✅             | ❌        | ❌        | ❌           |
-| Port Scanning             | ✅             | ❌        | ❌        | ❌           |
-| Technology Detection      | ✅             | ❌        | ❌        | ❌           |
-| **Advanced Features**     |                |           |           |              |
-| Subdomain Enumeration     | ✅             | ✅        | ✅        | ✅           |
-| HTTP Header Analysis      | ✅             | ❌        | ❌        | ❌           |
-| Historical Data (Wayback) | ✅             | ❌        | ❌        | ❌           |
-| Shodan Integration        | ✅             | ✅        | ❌        | ❌           |
-| **Security Features**     |                |           |           |              |
-| WAF Detection             | ✅             | ❌        | ❌        | ❌           |
-| Security Headers Analysis | ✅             | ❌        | ❌        | ❌           |
-| Email Security Checks     | ✅             | ❌        | ❌        | ❌           |
-| DNSSEC Validation        | ✅             | ✅        | ✅        | ❌           |
-| **Threat Intelligence**   |                |           |           |              |
-| Domain Reputation         | ✅             | ❌        | ❌        | ❌           |
-| CT Log Monitoring        | ✅             | ❌        | ❌        | ❌           |
-| Typosquatting Detection  | ✅             | ❌        | ❌        | ❌           |
-| **Usability**            |                |           |           |              |
-| Concurrent Analysis      | ✅             | ✅        | ❌        | ❌           |
-| Color-Coded Output       | ✅             | ✅        | ❌        | ✅           |
-| Progress Tracking        | ✅             | ✅        | ❌        | ❌           |
-| JSON Export             | ✅             | ✅        | ✅        | ✅           |
+### ⚡ Performance & Usability
 
-## 💻 Installation
+- **Concurrent Analysis**: Runs multiple checks in parallel for speed
+- **Error Handling**: Clear, colorized, and robust error reporting
+- **Progress Tracking**: See real-time status, completion percentage, and estimates
+- **Data Export**: Save results as JSON for compliance or integration
+- **Web UI**: A Flask-based web interface for easy, interactive use
 
-```bash
-# Clone the repository
-git clone https://github.com/masterpiper211/DomainSnoop-Pro.git
-cd DomainSnoop-Pro
+---
 
-# Install dependencies
-pip install -r requirements.txt
+## 🖥️ Installation
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/masterpiper211/DomainSnoop-Pro.git
+    cd DomainSnoop-Pro
+    ```
+
+2. **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+---
 
 ## 🛠️ Usage Examples
 
-### Basic Domain Analysis
+### Basic Scan
 ```bash
-python domainsnoop-pro.py example.com --dns --ssl --ip
-```
-
-### Advanced Reconnaissance
-```bash
-python domainsnoop-pro.py example.com --subdomains --headers --wayback --shodan
-```
-
-### Security Analysis
-```bash
-python domainsnoop-pro.py example.com --ssl-security --http-security --email-security --waf
-```
-
-### Threat Intelligence
-```bash
-python domainsnoop-pro.py example.com --reputation --typosquatting --ct-logs
-```
-
-### Full Analysis
-```bash
-python domainsnoop-pro.py example.com --all --output results.json
-```
-
-## 🔧 Command Line Options
-
-```
+python domainsnoop_pro.py example.com --dns --ssl --ip
+Security Scan
+bash
+python domainsnoop_pro.py example.com --ssl-security --http-security --email-security --waf
+Reconnaissance Scan
+bash
+python domainsnoop_pro.py example.com --subdomains --headers --wayback --shodan --shodan-key YOUR_API_KEY
+Full Scan & Save to JSON
+bash
+python domainsnoop_pro.py example.com --all --output results.json
+Launch the Web UI
+bash
+python domainsnoop_pro.py --web
+# Then open http://localhost:5000 in your browser
+🧩 Command Line Options
+Code
 Basic Analysis:
   domain              Target domain to analyze
   --dns               Fetch DNS records
@@ -148,127 +90,73 @@ Basic Analysis:
 Security Analysis:
   --ssl-security      Analyze SSL/TLS security configuration
   --http-security     Analyze HTTP security headers
-  --email-security    Check email security
+  --email-security    Check email security (SPF, DKIM, DMARC, MTA-STS)
   --dnssec            Check DNSSEC configuration
 
 Reconnaissance:
   --subdomains        Enumerate subdomains
-  --headers           Analyze HTTP headers
-  --wayback           Check Wayback Machine URLs
-  --shodan            Query Shodan for information
+  --headers           Analyze HTTP headers / detect technologies
+  --wayback           Get URLs from Wayback Machine
+  --shodan            Query Shodan for external exposure and vulnerabilities
+  --shodan-key        Provide Shodan API key
 
 Threat Intelligence:
-  --reputation        Check domain reputation
-  --typosquatting     Check for typosquatting domains
-
-Additional Features:
-  --ports             Scan common ports
-  --tech              Detect web technologies
-  --ct-logs           Check Certificate Transparency logs
+  --reputation        Check domain reputation against blacklists
+  --typosquatting     Scan for active typo-variant domains
   --waf               Detect Web Application Firewall
-  --all               Run all checks
 
 Output Options:
   --output FILE       Save results to file (JSON format)
-  --quiet             Suppress progress bar
-```
+  --all               Run all checks
+  --web               Launch the DomainSnoop-Pro web UI
+🌐 Web User Interface
+DomainSnoop-Pro includes an interactive web UI built with Flask.
 
-## 🎯 Features in Detail
+To launch:
+bash
+python domainsnoop_pro.py --web
+Visit http://localhost:5000 in your browser
+Select checks and input your domain right from your browser
+📊 Comparison With Similar Tools
+Feature	DomainSnoop-Pro	Amass	DNSRecon	theHarvester
+DNS Enumeration	✅	✅	✅	✅
+SSL/TLS Certificate Analysis	✅	❌	❌	❌
+SSL/TLS Security Check	✅	❌	❌	❌
+Port Scanning	✅	❌	❌	❌
+Technology Detection	✅	❌	❌	❌
+Subdomain Enumeration	✅	✅	✅	✅
+HTTP Header Analysis	✅	❌	❌	❌
+Wayback Machine Integration	✅	❌	❌	❌
+Shodan Integration	✅	✅	❌	❌
+WAF Detection	✅	❌	❌	❌
+Email Security (SPF, DKIM...)	✅	❌	❌	❌
+DNSSEC Validation	✅	✅	✅	❌
+Reputation Checks	✅	❌	❌	❌
+Typosquatting Detection	✅	❌	❌	❌
+Certificate Transparency Logs	✅	❌	❌	❌
+Concurrent Analysis	✅	✅	❌	❌
+Colorized Output / Progress	✅	✅	❌	✅
+JSON Export	✅	✅	✅	✅
+Web UI	✅	❌	❌	❌
+🔒 Security & Ethics
+Only use DomainSnoop-Pro for domains you have permission to scan
+Respect rate limits and target policies
+Use responsibly and legally
+📝 License
+MIT License — see LICENSE for full details.
 
-### HTTP Headers Analysis
-- Complete header security assessment
-- Information leakage detection
-- Security header recommendations
-- Technology stack identification
-- Server configuration analysis
+🤝 Contributing
+Contributions are welcome!
 
-### Subdomain Enumeration
-- DNS zone transfer attempts
-- Common subdomain discovery
-- Certificate Transparency log analysis
-- Active subdomain validation
-- IP resolution for discovered subdomains
+Fork the repo
+Create a feature branch
+Submit your pull request
+For bigger changes, please open an issue to discuss first
+🙏 Acknowledgments
+Inspired by and builds upon:
 
-### Historical Data Analysis
-- Wayback Machine integration with:
-  - Comprehensive URL categorization
-  - Status code analysis
-  - MIME type tracking
-  - Temporal analysis
-  - Year-by-year statistics
-  - Advanced error handling and retry mechanism
-- Historical URL discovery with smart filtering
-- Content type analysis and categorization
-- Status code distribution analysis
-- Temporal analysis of domain changes
-
-### Progress Tracking
-- Real-time progress indication with:
-  - Percentage completion
-  - Visual progress bar
-  - Task completion counter
-  - Elapsed time tracking
-  - Estimated time remaining
-- Smart concurrent task tracking
-- Detailed progress for each analysis type
-
-### Shodan Integration
-```bash
-# Using command line argument
-python domainsnoop-pro.py example.com --shodan --shodan-key YOUR_API_KEY
-
-# Using environment variable
-set SHODAN_API_KEY=YOUR_API_KEY
-python domainsnoop-pro.py example.com --shodan
-```
-
-The Shodan integration can be used in two ways:
-1. Pass your API key directly using the `--shodan-key` argument
-2. Set the `SHODAN_API_KEY` environment variable
-
-- Service enumeration
-- Vulnerability detection
-- Banner grabbing
-- Port mapping
-- Security insight generation
-
-## 🔒 Security Considerations
-
-DomainSnoop Pro is designed for legitimate security assessment and research purposes. When using this tool:
-
-1. Ensure you have permission to scan the target domain
-2. Be mindful of rate limits and server load
-3. Follow responsible disclosure practices
-4. Comply with all applicable laws and regulations
-
-## 📈 Performance
-
-- Concurrent analysis for faster results
-- Smart rate limiting to prevent server overload
-- Efficient resource utilization
-- Typical scan times:
-  - Basic scan: 15-30 seconds
-  - Security scan: 30-60 seconds
-  - Full scan: 1-2 minutes
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
-
-We welcome contributions! Whether it's bug fixes, new features, or documentation improvements, please feel free to:
-
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
-
-For major changes, please open an issue first to discuss your proposed changes.
-
-## 🌟 Acknowledgments
-
-Special thanks to the open-source community and the following projects that inspired DomainSnoop Pro:
-- Amass
-- DNSRecon
-- theHarvester
-- Nmap
+Amass
+DNSRecon
+theHarvester
+Nmap
+DomainSnoop-Pro: Your all-in-one toolkit for domain intelligence, security, and reconnaissance
